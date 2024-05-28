@@ -1,27 +1,71 @@
 {
-  "name": "next-personal-portofolio",
-  "version": "0.1.0",
+  "name": "@next-personal-portofolio/masalief-maulana",
+  "version": "0.0.1",
+  "author": "Viole403",
+  "description": "My personal portofolio website build with Next.js",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Viole403/next-portfolio.git"
+  },
+  "keywords": [
+    "next",
+    "react",
+    "personal",
+    "portfolio",
+    "website",
+    "medium-scraping",
+    "masalief-maulana",
+    "viole403"
+  ],
+  "license": "MIT",
+  "browserslist": [
+    "chrome 64",
+    "edge 79",
+    "firefox 67",
+    "opera 51",
+    "safari 12"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:prettier": "prettier --write . && npm run build",
+    "prettier": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@prisma/client": "^5.12.1",
+    "bootstrap": "^5.3.3",
+    "next": "^14.2.1",
+    "next-intl": "^3.12.0",
     "react": "^18",
+    "react-css-theme-switcher": "^0.3.0",
     "react-dom": "^18",
-    "next": "14.1.2"
+    "react-feather": "^2.0.10",
+    "react-google-recaptcha": "^3.1.0",
+    "react-hook-form": "^7.51.3",
+    "react-icons": "^5.1.0",
+    "react-parallax": "^3.5.1",
+    "shufflejs": "^6.1.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@types/bootstrap": "^5.2.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8",
-    "eslint-config-next": "14.1.2"
+    "eslint-config-next": "14.2.1",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "typescript": "^5"
   }
 }

@@ -1,0 +1,69 @@
+{
+  "personal_info": {
+    "title": "Data Pribadi",
+    "description": "Mahasiswa S-1 Sistem Informasi dengan pengalaman IT Support, Web Development, dan Project Management, mencari peluang pekerjaan.",
+    "spoken_languages": "Bahasa Lisan",
+    "nationality": "Kebangsaan",
+    "interests": "Minat",
+    "interest_list": "Membaca, Mendengarkan Musik, Mempelajari Hal Baru"
+  },
+  "services": {
+    "title": "Layanan",
+    "our_services": "Layanan Kami",
+    "description": "Solusi IT terdepan: Support, Development, dan Management untuk masa depan bisnis Anda.",
+    "first_service": {
+      "title": "IT Support",
+      "description": "Membantu menyelesaikan permasalahan IT di perusahaan Anda."
+    },
+    "second_service": {
+      "title": "Web Development",
+      "description": "Membuat website yang profesional dan sesuai kebutuhan perusahaan Anda."
+    },
+    "third_service": {
+      "title": "Project Management",
+      "description": "Mengelola proyek IT di perusahaan Anda dengan efektif dan efisien dalam waktu dan biaya."
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "description": "Keahlian teruji hasil dari pengalaman dan belajar.",
+    "education": "Pendidikan",
+    "experience": "Pengalaman",
+    "first_education": {
+      "title": "S.Si - Sistem Informasi",
+      "duration": "2021 - Now",
+      "description": "Universitas Narotama (UN) is a quality-focused university in East Java, Indonesia, excelling in education, research, and community services and currently holds the 7th position among the best universities in East Java according to the Webometrics ranking for January 2024",
+      "location": "Jl. Arief Rahman Hakim No. 51, Klampis Ngasem, Kec. Sukolilo, Kota Surabaya, Jawa Timur, 60117, Indonesia",
+      "gpa": "3.8"
+    },
+    "second_education": {
+      "title": "SMK - Rekayasa Perangkat Lunak",
+      "duration": "2018 - 2021",
+      "description": "SMK 17 Agustus 1945 Surabaya is a vocational school in Surabaya established in 1950. It offers programs in business, IT, engineering & hospitality. The school has a strong reputation and various extracurricular activities.",
+      "location": "Jl. Nginden Semolo No. 44, Nginden Jangkungan, Kec. Sukolilo, Kota Surabaya, Jawa Timur, 60118, Indonesia",
+      "gpa": "3.45"
+    },
+    "third_education": {
+      "title": "SMP - SMP Negeri 48 Surabaya",
+      "duration": "2015 - 2018",
+      "description": "SMP Negeri 1 Surabaya is a public junior high school in Surabaya, East Java, Indonesia. It is one of the best public junior high schools in Surabaya.",
+      "location": "Jl. Raya Darmo No. 1, Kec. Wonokromo, Kota Surabaya, Jawa Timur, 60241, Indonesia",
+      "gpa": "3.6"
+    },
+
+    "first_experience": {
+      "title": "Internship - PT. QLCOM Solusi Bisnis",
+      "duration": "2019 - 2020",
+      "description": "- Developed and maintained the company website and web application\n",
+      "location": "Jl. Rungkut Asri Timur X No.A-11, Rungkut Kidul, Kec. Rungkut, Kota Surabaya, Jawa Timur, 60293, Indonesia",
+      "skills": "PHP, Laravel, JavaScript and Sencha ExtJS",
+      "skills_list": ["PHP, Laravel, JavaScript, Sencha ExtJS"]
+    }
+  },
+  "offer": {
+    "title": "Saya Tersedia Untuk Freelancer.",
+    "description": "Kami menawarkan solusi IT terdepan untuk masa depan bisnis Anda.",
+    "emailAddress": "Email Address",
+    "sendMassage": "Kirim Pesan"
+  }
+}

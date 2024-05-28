@@ -18,8 +18,16 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@app/*": ["./src/app/*"], // "src" is the root folder of the project
+      "@components/*": ["./src/components/*"],
+      "@fonts/*": ["./public/fonts/*"],
+      "@styles/*": ["./public/styles/*"],
+      "@images/*": ["./src/images/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@scripts/*": ["./public/scripts/*"],
+      "@utils/*": ["./src/utils/*"]
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

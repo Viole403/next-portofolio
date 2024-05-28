@@ -1,0 +1,185 @@
+'use client';
+
+import React, { FC, useState, useEffect } from 'react';
+import Image from 'next/image';
+import logosm from '@images/logo-sm.png';
+import logolight from '@images/logo-light.png';
+import logodark from '@images/logo-dark.png';
+import {
+  ThemeSwitcherProvider,
+  useThemeSwitcher,
+} from 'react-css-theme-switcher';
+import * as IconFeather from 'react-feather';
+import ScrollLink from './scrollLink';
+import Link from 'next/link';
+
+const Navbar: FC = () => {
+  // Keeps the state of the theme
+  const [themeState, setThemeState] = useState('dark');
+
+  // Sticky navbar state
+  const [isSticky, setIsSticky] = useState(true);
+
+  // light/dark themes related styles css files
+  const themes = {
+    dark: `./styles/style-dark.css`,
+    light: `./styles/style-light.css`,
+  };
+
+  /**
+   * Gets the theme state on initial load
+   * stored in localStorage or if not, set default theme as dark theme
+   */
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentTheme = localStorage.getItem('theme') || 'dark'; // get the user theme state from localStorage
+      setThemeState(currentTheme);
+    }
+  }, []);
+
+  /**
+   * Sets the sticky navbar state
+   * on scroll
+   */
+  useEffect(() => {
+    setIsSticky(typeof window !== 'undefined');
+  }, []);
+
+  /**
+   * Toggles the theme and keep it in localStorage
+   */
+  const toggleTheme = () => {
+    if (themeState === 'dark') {
+      localStorage.setItem('theme', 'light');
+      setThemeState('light');
+    } else {
+      localStorage.setItem('theme', 'dark');
+      setThemeState('dark');
+    }
+  };
+
+  return (
+    <nav
+      className={`navbar navbar-expand-lg fixed-top sticky mx-auto ${isSticky ? 'nav-sticky' : ''}`}
+      id="navbar"
+    >
+      <div className="container">
+        <a href="/" className="navbar-brand">
+          <Image
+            src={logosm}
+            alt=""
+            height={26}
+            width={26}
+            className="logo-sm"
+          />{' '}
+          <Image src={logolight} alt="" className="logo-light" />
+          <Image src={logodark} alt="" className="logo-dark" />
+        </a>
+        <a
+          href="#"
+          className="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggle-icon">
+            <IconFeather.Menu />
+          </span>
+        </a>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto navbar-center mt-lg-0 mt-2">
+            <li className="nav-item">
+              <a className="nav-link active" href="/">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <ScrollLink className="nav-link" href="#about">
+                About
+              </ScrollLink>
+            </li>
+            <li className="nav-item">
+              <ScrollLink className="nav-link" href="#services">
+                Services
+              </ScrollLink>
+            </li>
+            <li className="nav-item">
+              <ScrollLink className="nav-link" href="#resume">
+                Resume
+              </ScrollLink>
+            </li>
+            <li className="nav-item">
+              <ScrollLink className="nav-link" href="#projects">
+                Projects
+              </ScrollLink>
+            </li>
+            <li className="nav-item">
+              <ScrollLink className="nav-link" href="#blogs">
+                Blogs
+              </ScrollLink>
+            </li>
+            <li className="nav-item">
+              <ScrollLink className="nav-link" href="#contact">
+                Contact
+              </ScrollLink>
+            </li>
+          </ul>
+          <div className="theme-switcher mt-lg-0">
+            <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}>
+              <div className="center">
+                <div className="form-check form-switch">
+                  <label className="form-check-label" htmlFor="themeSwitch">
+                    {themeState === 'light' ? (
+                      <>
+                        <span>&nbsp;</span>
+                        <IconFeather.Sun className="theme-icon" />
+                      </>
+                    ) : (
+                      <>
+                        <span>&nbsp;</span>
+                        <IconFeather.Moon className="theme-icon" />
+                      </>
+                    )}
+                  </label>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="themeSwitch"
+                    checked={themeState === 'dark'}
+                    onChange={toggleTheme}
+                  />
+                </div>
+              </div>
+            </ThemeSwitcherProvider>
+          </div>
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="languageDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span className="fi fi-en"></span>
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="languageDropdown">
+              <li>
+                <Link locale="en" href="/">
+                  Switch to English
+                </Link>
+              </li>
+              {/* Add more language options here */}
+            </ul>
+          </div>
+          {/* <a href="#" className="btn btn-sm nav-btn text-primary mb-4 mb-lg-0">
+            Hire Me! <IconFeather.ChevronsRight className="icon-lg ms-1" />{' '}
+          </a> */}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
