@@ -12,6 +12,7 @@ import '@styles/style-dark.css';
 import Footer from '@components/footer';
 import Navbar from '@components/navbar';
 import ImportBsJS from '@utils/importBsJS';
+import { getMessages } from 'next-intl/server';
 // import ScriptComponent from '@utils/script';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -30,14 +31,24 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-export default function RootLayout({
+// export const dynamic = 'auto'
+
+const locales = ['id', 'en'];
+
+export const dynamic = 'force-dynamic';
+
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const messages = useMessages();
+
+  // const messages = useMessages();
+  const messages = await getMessages();
+
+
 
   return (
     <html lang={locale}>
